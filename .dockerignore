@@ -1,0 +1,47 @@
+For an Angular project, the .dockerignore is quite similar to the Node.js one, but with a few specific additions related to the Angular CLI and browser testing tools.
+
+Create a file named .dockerignore in your Angular project root and paste the following:
+
+Plaintext
+# Dependency directories
+# We want to install these fresh inside the container
+node_modules/
+
+# Angular build output
+# If you have a local 'dist' folder, don't copy it; 
+# the Dockerfile will build a fresh one.
+dist/
+.angular/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+.project
+.classpath
+.factorypath
+
+# Unit Testing and Coverage
+coverage/
+.karma/
+chrome_debug.js
+
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# Version Control
+.git/
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
